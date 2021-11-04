@@ -129,6 +129,7 @@ const MainListItems = (props) => {
           </>
         )}
       />
+      <img style={suporte} src="" alt="Logo" />;
     </div>
   );
 };

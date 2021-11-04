@@ -39,6 +39,11 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
   },
+  logonotifica: {
+    marginLeft: "10%",
+    marginTop: "10%",
+    width: "52%",
+  },
   toolbarIcon: {
     display: "flex",
     alignItems: "center",
@@ -176,11 +181,7 @@ const LoggedInLayout = ({ children }) => {
         }}
         open={drawerOpen}
       >
-        <div className={classes.toolbarIcon}>
-          <IconButton onClick={() => setDrawerOpen(!drawerOpen)}>
-            <ChevronLeftIcon />
-          </IconButton>
-        </div>
+        <img onClick={() => setDrawerOpen(!drawerOpen)} className={classes.logonotifica} src="">
         <Divider />
         <List>
           <MainListItems drawerClose={drawerClose} />
@@ -217,7 +218,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            WhaTicket
+            Notifica Cliente
           </Typography>
           {user.id && <NotificationsPopOver />}
 
