@@ -181,7 +181,7 @@ const LoggedInLayout = ({ children }) => {
         }}
         open={drawerOpen}
       >
-        <img onClick={() => setDrawerOpen(!drawerOpen)} className={classes.logonotifica} src="" alt="Logo" width="80%" />;
+        <img onClick={() => setDrawerOpen(!drawerOpen)} className={classes.logonotifica} src="https://notificacliente.com.br/tickets/logo_notifica_cliente.png" alt="Logo" width="80%" />;
         <Divider />
         <List>
           <MainListItems drawerClose={drawerClose} />

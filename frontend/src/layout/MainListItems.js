@@ -136,7 +136,7 @@ const MainListItems = (props) => {
           </>
         )}
       />
-      <img style={suporte} src="" alt="Logo" />;
+      <img style={suporte} src="https://notificacliente.com.br/tickets/logo_suporte.jpg" alt="Logo" />;
     </div>
   );
 };
