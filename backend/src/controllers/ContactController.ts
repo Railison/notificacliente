@@ -11,6 +11,8 @@ import DeleteContactService from "../services/ContactServices/DeleteContactServi
 import CheckIsValidContact from "../services/WbotServices/CheckIsValidContact";
 import GetProfilePicUrl from "../services/WbotServices/GetProfilePicUrl";
 import AppError from "../errors/AppError";
+import SearchContactService from "../services/ContactServices/SearchContactService";
+import { Exception } from "@sentry/types";
 
 type IndexQuery = {
   searchParam: string;
@@ -52,7 +54,8 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
 
   try {
     await schema.validate(newContact);
-  } catch (err) {
+  } 
+  catch (err: any) {
     throw new AppError(err.message);
   }
 
@@ -82,6 +85,12 @@ export const show = async (req: Request, res: Response): Promise<Response> => {
   return res.status(200).json(contact);
 };
 
+export const search = async (req: Request, res: Response) : Promise<Response> =>{
+  const { number } = req.params;
+  const contacts = await SearchContactService(number);
+  return res.status(200).json(contacts);
+}
+
 export const update = async (
   req: Request,
   res: Response
@@ -98,7 +107,8 @@ export const update = async (
 
   try {
     await schema.validate(contactData);
-  } catch (err) {
+  } 
+  catch (err: any) {
     throw new AppError(err.message);
   }
 

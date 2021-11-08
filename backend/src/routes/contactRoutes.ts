@@ -16,6 +16,8 @@ contactRoutes.get("/contacts", isAuth, ContactController.index);
 
 contactRoutes.get("/contacts/:contactId", isAuth, ContactController.show);
 
+contactRoutes.get("/contacts/search/:number", isAuth, ContactController.search)
+
 contactRoutes.post("/contacts", isAuth, ContactController.store);
 
 contactRoutes.put("/contacts/:contactId", isAuth, ContactController.update);
